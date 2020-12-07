@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>DM324 - studentlist</title>
+<script>
+    var arr=[['20193056','abdo','fcaulty','user.png'],['20195566','ahmed','faculty','user.ping']]
+</script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body onload="init();">
+    <!--nav-->
+    <nav>
+     <ul>
+<li>  <a  href="index.html" target="_blank">Home</a></li>
+<li> <a class="active" href="Studentlist.html" target="_blank">Student List</a></li>
+<li> <a href="newstudent.html" target="_blank">New Student</a></li>
+<li class="nav-right"><a href="#" target="_blank">Logout</a></li>
+</ul>
+</nav>
+    <!--#nav-->
+<hr>
+<div class="searchbar">
+    <input type="search" class="searchbox">
+</div>
+
+<div id="mytable"> </div>
+<!--Sec-->
+
+
+
+<!--#sec-->
+<hr>
+
+<script>
+    function init(){
+        var count=0;
+        var mytable='';
+        mytable+='<table border="1">';
+        mytable+='<thead>'+'<tr>'+
+                    '<td>ID</td>'+
+                 '<td>Name</td>'+
+                 '<td>Faculty</td>'+
+                 '<td>image</td>'+
+                 '</tr>'+
+                 '</thead>'+
+                 '<tbody>';
+                 for(let i=0;i<arr.length;i++){
+                     var studentID=arr[i][0];
+                     var studentName=arr[i][1];
+                     var studentFaculty=arr[i][2];
+                     var studentImage=arr[i][3];
+
+                     mytable+='<tr><td>'+studentID+'</td>'+
+                              '<td>'+studentName+'</td>'+
+                              '<td>'+studentFaculty+'</td>'+
+                              '<td>'+'<img src="images//'+studentImage+'" alt="image of'+studentName+'" width="30px" height="30px">'+'</td></tr>'
+
+                         count++;
+                 }
+                 mytable+='</tbody>';
+                 mytable+='<tfoot><tr><td colspan="4">Total no. of Students:'+count+'</td></tr></tfoot></table>';
+
+                     document.getElementById("mytable").innerHTML= mytable ;
+    }
+</script>
+
+&copy; <a href="http://fue.edu.eg">Future University in Egypt</a> &nbsp;&nbsp; &mdash;&nbsp;&nbsp; <a href="mailto:20132627@fue.edu.eg">contact us</a>
+<!--#footer-->
+
+</body>
+
+</html>
